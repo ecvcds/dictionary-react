@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  max-width: 100px;
+  display: block;
+  margin-left: 100px;
+  padding: 10px;
+ 
+}
+
+.App-header{
+  background-color: #212529;
+}
