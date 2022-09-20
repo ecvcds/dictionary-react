@@ -1,14 +1,21 @@
 import React, {useState} from "react";
-import "./Dictionary.css"
+import axios from "axios";
+import "./Dictionary.css";
 export default function Dictionary(){
-    let [keywork,setKeyword]=useState(null)
+    let [keyword,setKeyword]=useState(null)
+    let apiURL =`https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`
     function search(event){
         event.preventDefault();
     }
     function handleKeywordChange(event){
         setKeyword(event.target.value);
     }
-    return (
+    function handleResponse(response){
+        console.log(response.data[0])
+    }
+    axios.get(apiURL).then(handleResponse)
+
+    return(
         <div className="Dictionary">
             <form onSubmit={search}>
                 <input type="search" onChange={handleKeywordChange}/>
