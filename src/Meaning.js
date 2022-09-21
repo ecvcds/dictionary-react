@@ -9,7 +9,7 @@ export default function Meaning(props){
                 return(
                     <div className="FirstDefinition">
                         <p> <strong>Definition:</strong> {definition.definition}</p>
-                        <p><strong>Example:</strong> <i>{definition.example}</i></p>
+                        <p> <i>{definition.example}</i></p>
                         <Synonyms synonyms={definition.synonyms}/>
                     </div>
                 )} else {

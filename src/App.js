@@ -1,12 +1,13 @@
 import logo from './logo.png';
 import './App.css';
-import Dictionary from "./Dictionary"
+import Dictionary from "./Dictionary";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo img-fluid" alt="logo" />
+        <img src={logo} className="App-logo" alt="logo" />
       </header>
       <div className="container">
         <Dictionary />

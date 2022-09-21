@@ -1,11 +1,11 @@
 import React from "react";
+import ListGroup from 'react-bootstrap/ListGroup';
 
 export default function Phonetic(props){
-    console.log(props.phonetic)
+   
     return (
         <div>
-            <a href= {props.phonetic.audio} target ="_blank" rel="noreferrer">Listen</a>
-            {props.phonetic.text}
+            <ListGroup.Item as="li" className = "Phonetics" >{props.phonetic.text}</ListGroup.Item>
         </div>
     )
 }

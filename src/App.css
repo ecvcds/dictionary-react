@@ -1,7 +1,14 @@
+body{
+  background-color:#010101;
+}
+
 .App {
   text-align: center;
 }
 
+.App-footer a{
+  color:aliceblue
+}
 .App-logo {
   max-width: 100px;
   display: block;
@@ -18,4 +25,47 @@
 .App-footer{
   margin: 30px 0;
   font-size: 10px;
+  background-color: #212529;
+  color:white;
+}
+
+.SimilarDefinition{
+  display: none;
+}
+
+.Dictionary section{
+  background-color: white;
+  padding-bottom: 50px;
+  padding-top: 10px;
+  padding-left: 50px;
+  text-align: left;
+  border-radius: 5px;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  margin:20px 0;
+}
+
+.Dictionary #inputForm{
+  width: 80%;
+  border-radius: 6px;
+  padding: 6px 4px;
+  border: 1px solid #ddd;
+
+}
+
+.Dictionary #searchFormButton{
+  width: 15%;
+  border-radius: 6px;
+  padding: 6px 4px;
+  border: 1px solid #ddd;
+
+}
+
+.Keyword{
+  text-align: left;
+  font-size: 50px;
+}
+
+.Phonetics li{
+  border-style: none;
+  border-color: white;
 }
