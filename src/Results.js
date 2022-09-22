@@ -46,7 +46,7 @@ export default function Results(props) {
                         </div>
                         <div class="col-md-12 col-sm-12">
                             <section className="py-3 col-md-12 col-sm-12" id="props.definitions">
-                                <h2>props.result.definitions:</h2>
+                                <h2>Definition:</h2>
                                 {props.result.meanings.map(function (meaning, index) {
                                     return (
                                         <div key={index}>
