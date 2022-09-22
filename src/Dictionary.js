@@ -1,11 +1,14 @@
 import React, {useState} from "react";
 import axios from "axios";
 import Results from "./Results";
+import Photos from "./Photos";
 export default function Dictionary(){
     let [keyword,setKeyword]=useState("");
     let [suggestionMessage,setSuggestionMessage]=useState("Suggestions: victory, happiness, love, etc.");
     let [definition,setDefinition]=useState({});
     let [errorMessage,setErrorMessage]=useState("");
+    let [photos,setPhotos]=useState(null);
+
     function search(event){
         event.preventDefault();
         let apiURL =`https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
@@ -19,26 +22,30 @@ export default function Dictionary(){
         setSuggestionMessage("");
         }
 
-
-    
+        let pexelsApiKey = "563492ad6f9170000100000103998c37dfb34c968d9230116de6778d";
+        let pexelsURL = `https://api.pexels.com/v1/search?query=${keyword}`;
+        axios.get(pexelsURL,{headers:{"Authorization":`${pexelsApiKey}`}}).then(handlePexelsResponse);
     }
     function handleKeywordChange(event){
         setKeyword(event.target.value);
         setErrorMessage("");
         setSuggestionMessage("Suggestions: victory, happiness, love, etc.");
-
-
     }
     function handleResponse(response){
         if (response.data[0]){
             setDefinition(response.data[0]);
             setErrorMessage("");
         } 
-
     }
     function handleClick(event){
         event.target.value = "";
     }
+    function handlePexelsResponse(response){
+        setPhotos(response.data.photos);
+    }
+
+
+
 
    return(
         <div className="Dictionary">
@@ -52,6 +59,7 @@ export default function Dictionary(){
                 <p>{suggestionMessage}</p>
             </section>
             <Results result = {definition}/>
+            <Photos photos = {photos} />
         </div>
     );
 }

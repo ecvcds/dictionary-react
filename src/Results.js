@@ -11,28 +11,33 @@ export default function Results(props){
         event.preventDefault();
         audio.play();
     }
+
+
     if(props.result.word){
         
         return (
-        <div className="Results">       
-            <h2 className="Keyword">{props.result.word} <button onClick={handleAudio} href="#" id="listenPhonetics" className="align-top btn btn-link">🔊</button></h2>
-            <ListGroup horizontal id="ListGroup" className = "Phonetics">
-                {props.result.phonetics.map(function(phonetic,index){
-                    return(
-                        <div  key={index}>
-                            <Phonetic phonetic={phonetic}/>
-                        </div>
-                    )
-                })}
-            </ListGroup>
-            <section>          
+        <div className="Results">
+            <section>
+                <div className="row"> 
+                    <h2 className="Keyword">{props.result.word} <button onClick={handleAudio} href="#" id="listenPhonetics" className="align-top btn btn-link">🔊</button></h2>
+                    <ListGroup horizontal id="ListGroup" className = "Phonetics d-flex flex-row">
+                    {props.result.phonetics.map(function(phonetic,index){
+                        return(
+                            <div  key={index}>
+                                <Phonetic phonetic={phonetic}/>{' '}
+                            </div>
+                        )
+                    })}
+                    </ListGroup>
+                </div>  
+            </section>    
                 {props.result.meanings.map(function(meaning,index){
                     return ( 
-                    <div className="Definitions" key={index}> 
-                        <Meaning meaning={meaning} index = {index} />
+                    <div className="Definitions"key={index}> 
+                       <Meaning  meaning={meaning} index = {index} className="dropdown-item" />
                     </div>)
                 })}
-            </section>
+
         </div>
         );
     } else {
