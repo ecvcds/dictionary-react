@@ -63,9 +63,20 @@ body{
 .Keyword{
   text-align: left;
   font-size: 50px;
+  margin: 0px;
+  padding-right: 0px;
 }
 
 .Phonetics li{
   border-style: none;
   border-color: white;
+  margin: 0px;
+}
+#listenPhonetics {
+  text-decoration: none; 
+  color:#212529;
+  font-size: 20px;
+  margin: 0px;
+  padding: 0px;
+  border-color: none;
 }

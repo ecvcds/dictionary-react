@@ -3,13 +3,19 @@ import Meaning from "./Meaning";
 import Phonetic from "./Phonetic";
 import ListGroup from 'react-bootstrap/ListGroup';
 
-export default function Results(props){
-    if(props.result.word){
 
+export default function Results(props){
+    
+    function handleAudio(event){
+        let audio = new Audio (props.result.phonetics[0].audio)
+        event.preventDefault();
+        audio.play();
+    }
+    if(props.result.word){
+        
         return (
-        <div className="Results">
-            <h2 className="Keyword"> {props.result.word}</h2>
-            <a href= {props.result.phonetics[0].audio} target ="_blank" rel="noreferrer" id = "listenPhonetics">Listen</a> 
+        <div className="Results">       
+            <h2 className="Keyword">{props.result.word} <button onClick={handleAudio} href="#" id="listenPhonetics" className="align-top btn btn-link">🔊</button></h2>
             <ListGroup horizontal id="ListGroup" className = "Phonetics">
                 {props.result.phonetics.map(function(phonetic,index){
                     return(
@@ -19,7 +25,6 @@ export default function Results(props){
                     )
                 })}
             </ListGroup>
-
             <section>          
                 {props.result.meanings.map(function(meaning,index){
                     return ( 
