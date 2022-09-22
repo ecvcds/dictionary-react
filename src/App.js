@@ -5,19 +5,26 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
+    <div className="App d-flex flex-column min-vh-100">
       <div className="container">
-        <Dictionary />
-      </div>
-      <footer className ="App-footer">
-          This project was coded by {" "}
-          <a href = "https://angry-kare-a79609.netlify.app/" target ="_blank" rel="noreferrer">Cátia Silva</a> and is{" "}
-          <a href="https://github.com/CVCDS-GECAD/dictionary-react" target ="_blank" rel="noreferrer" >Open-sourced</a>
-          {" "}on Github and hosted on Netlify
-        </footer>
+        <header className="App-header fixed-top">
+          <img src={logo} className="App-logo" alt="logo" />
+        </header>
+        
+          <Dictionary />
+        
+        <div className="row App-footer">
+                <div className="col-8 pt-2 mx-0">
+                    <p> 2022 💻 Designed and coded by <strong>Cátia Silva</strong>. Open-sourced code on <a href="https://github.com/ecvcds/portfolio-cvcds" title="GitHub">GitHub</a></p>
+                </div>
+                <div className="col-2 pt-2">
+                    <a href="https://www.linkedin.com/in/ecvcs/" title="Linkedin">Linkedin</a> {" "}
+                    <a href="https://www.instagram.com/x_wuzhere/" title="Instagram">Instagram</a> {" "}
+                    <a href="https://www.facebook.com/catiavcsilva/" title="Facebook">Facebook</a> {" "}
+                </div>
+        </div>
+     
+        </div>
     </div>
   );
 }

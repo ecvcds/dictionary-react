@@ -5,7 +5,7 @@ export default function Phonetic(props){
    if(props.phonetic.text!== undefined)
     {return (
         <div>
-            <ListGroup.Item className="p-0" as="li">{props.phonetic.text}</ListGroup.Item>
+            <ListGroup.Item className="p-0 text-muted" as="li">{props.phonetic.text}</ListGroup.Item>
         </div>
     )}
     else {

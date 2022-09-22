@@ -1,13 +1,15 @@
 import React from "react";
+import ListGroup from 'react-bootstrap/ListGroup';
 
 export default function Synonyms(props){
-    console.log(props.synonyms)
     if (props.synonyms){
         return(
             <div className="Synonyms">
-               {props.synonyms.map(function(synonym,index){
-                    return <li key={index}>{synonym}</li>
-                })} 
+               <ListGroup horizontal className = "Synonyms d-flex flex-row">
+                            {props.synonyms.map(function(synonym,index){
+                                    return <li className ="px-2" key={index}>{synonym}</li>
+                            })} 
+                </ListGroup>
             </div>
             
         );
@@ -15,3 +17,5 @@ export default function Synonyms(props){
         return null;
     }
 }
+
+

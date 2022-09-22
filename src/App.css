@@ -6,8 +6,15 @@ body{
   text-align: center;
 }
 
-.App-footer a{
-  color:aliceblue
+.App-footer {
+  color:white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+  background-color: #212529;
 }
 .App-logo {
   max-width: 100px;
@@ -20,24 +27,21 @@ body{
 .App-header{
   background-color: #212529;
   margin-bottom: 10px;
-}
-
-.App-footer{
-  margin: 30px 0;
-  font-size: 10px;
-  background-color: #212529;
-  color:white;
+  width: 100%;
 }
 
 .SimilarDefinition{
   display: none;
 }
-
+.Dictionary {
+  margin-top: 100px;
+}
 .Dictionary section{
   background-color: white;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   padding-top: 10px;
   padding-left: 50px;
+  padding-right: 10px;
   text-align: left;
   border-radius: 5px;
   box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
@@ -91,4 +95,8 @@ body{
 
 .Photos img {
   border-radius: 4px;
+}
+
+.Synonyms {
+  list-style-type: none;
 }
