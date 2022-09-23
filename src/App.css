@@ -100,3 +100,9 @@ body{
 .Synonyms {
   list-style-type: none;
 }
+
+.col {
+   white-space: nowrap;
+  
+}
+

@@ -46,7 +46,6 @@ export default function Dictionary() {
     function handlePexelsResponse(response) {
         if (response.data.photos) {
             setPhotos(response.data.photos);
-            setErrorMessage("");
         }
     }
 

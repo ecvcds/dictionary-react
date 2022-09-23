@@ -6,13 +6,13 @@ export default function Meaning(props){
                 {props.meaning.definitions.map(function(definition,index){
                     if (index === 0){
                     return(
-                        <div className="FirstDefinition text-muted">
-                            <p><strong>{props.meaning.partOfSpeech}</strong> <i>{definition.definition}</i> 
-                                <Synonyms synonyms={definition.synonyms}/> </p>
+                        <div className="FirstDefinition text-muted" key={index}>
+                            <strong>{props.meaning.partOfSpeech}</strong> <i>{definition.definition}</i> 
+                            <Synonyms synonyms={definition.synonyms}/>
                         </div>
                     )} else {
                         return(
-                            <div className="SimilarDefinition" >
+                            <div className="SimilarDefinition" key={index}>
                                 <p>Similar: {definition.definition}</p>
                                 <em>{definition.example}</em>
                             </div>

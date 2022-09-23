@@ -12,7 +12,7 @@ export default function Photos(props){
                                 return null;
                             } else {
                                 return (
-                                    <div className="col-4 mb-3">
+                                    <div className="col-4 mb-3" key={index}>
                                         <a href={photo.src.original} target="_blank" rel="noreferrer"><img className ="img-fluid" src={photo.src.tiny} alt = "keyword result" key = {index} /></a>
                                     </div>)
                             }
