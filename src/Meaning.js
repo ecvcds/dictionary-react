@@ -17,6 +17,8 @@ export default function Meaning(props){
                                 <p><u>Similar:</u> {definition.definition}</p>
                             </div>
                         )
+                    } else {
+                        return null;
                     }
 
                 })}
