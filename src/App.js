@@ -15,7 +15,7 @@ function App() {
         
         <div className="row App-footer">
                 <div className="col-8 pt-2 mx-0">
-                    <p> 2022 💻 Designed and coded by <strong>Cátia Silva</strong>. Open-sourced code on <a href="https://github.com/ecvcds/portfolio-cvcds" title="GitHub">GitHub</a></p>
+                    <p> 2022 💻 Designed and coded by <strong><a href="https://angry-kare-a79609.netlify.app/" title="Personal Website">Cátia Silva</a></strong>. Open-sourced code on <a href="https://github.com/CVCDS-GECAD/dictionary-react" title="GitHub">GitHub</a></p>
                 </div>
                 <div className="col-2 pt-2">
                     <a href="https://www.linkedin.com/in/ecvcs/" title="Linkedin">Linkedin</a> {" "}
