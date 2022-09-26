@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import Meaning from "./Meaning";
 import Phonetic from "./Phonetic";
 import ListGroup from 'react-bootstrap/ListGroup';
@@ -7,21 +7,32 @@ import Photos from "./Photos";
 
 
 export default function Results(props) {
+    let [audioIcon,setAudioIcon]=useState("🔊");
     function handleAudio(event) {
+        event.preventDefault();
+        console.log(props.result.phonetics);
         if (props.result.phonetics[0].audio) {
-            let audio = new Audio(props.result.phonetics[0].audio);
-            event.preventDefault();
-            audio.play();
+            console.log(props.result.phonetics[0].audio);
+            if(props.result.phonetics[0].audio!==""){
+                let audio = new Audio(props.result.phonetics[0].audio);
+                audio.play();
+            } 
+        } else if(props.result.phonetics[1].audio) {
+            console.log(props.result.phonetics[0].audio);
+            if(props.result.phonetics[1].audio!==""){
+                let audio = new Audio(props.result.phonetics[1].audio);
+                audio.play();
+            } 
         } else {
-            let audio = new Audio(props.result.phonetics[1].audio);
-            event.preventDefault();
-            audio.play();
+            setAudioIcon("");
+            alert(`Sorry, this is not available at the moment!`);
         }
+
+        
 
     }
 
-
-
+    
     if (props.result.word) {
 
         return (
@@ -30,7 +41,7 @@ export default function Results(props) {
                     <div className="col-md-6 col-sm-6" >
                         <div className="col-md-12 col-sm-6" >
                             <section>
-                                <h2 className="Keyword">{props.result.word} <button onClick={handleAudio} href="#" id="listenPhonetics" className="align-top btn btn-link">🔊</button></h2>
+                                <h2 className="Keyword">{props.result.word} <button onClick={handleAudio} href="#" id="listenPhonetics" className="align-top btn btn-link">{audioIcon}</button></h2>
                                 <ListGroup horizontal id="ListGroup" className="Phonetics d-flex flex-row">
                                     {props.result.phonetics.map(function (phonetic, index) {
                                         return (
@@ -40,7 +51,6 @@ export default function Results(props) {
                                         )
                                     })}
                                 </ListGroup>
-
                             </section>
                         </div>
                         <div className="col-md-12 col-sm-6">
@@ -49,8 +59,8 @@ export default function Results(props) {
                                     <h2>Definition:</h2>
                                     {props.result.meanings.map(function (meaning, index) {
                                         return (
-                                            <div  key={index}>
-                                                <Meaning meaning={meaning} index={index} />
+                                            <div key={index}>
+                                                <Meaning meaning={meaning} index={index} numberMeanings={props.result.meanings.length} />
                                             </div>)
                                     })}
                                 </section>

@@ -8,7 +8,7 @@ export default function Photos(props){
                 <section>
                     <div className="row">                 
                         {props.photos.map(function(photo,index){
-                            if(index>8){
+                            if(index>11){
                                 return null;
                             } else {
                                 return (

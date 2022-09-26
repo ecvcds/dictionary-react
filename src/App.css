@@ -31,7 +31,8 @@ body{
 }
 
 .SimilarDefinition{
-  display: none;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
 .Dictionary {
   margin-top: 100px;
@@ -102,7 +103,7 @@ body{
 }
 
 .row-11{
-  min-height: 322.6px;
+  min-height: 464.6px;
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 100%;
