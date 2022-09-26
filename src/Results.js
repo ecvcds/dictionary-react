@@ -26,9 +26,9 @@ export default function Results(props) {
 
         return (
             <div className="Results">
-                <div className='row row-height' >
+                <div className='row d-flex' >
                     <div className="col-md-6 col-sm-6" >
-                        <div className="col-md-12 col-sm-6 col" >
+                        <div className="col-md-12 col-sm-6" >
                             <section>
                                 <h2 className="Keyword">{props.result.word} <button onClick={handleAudio} href="#" id="listenPhonetics" className="align-top btn btn-link">🔊</button></h2>
                                 <ListGroup horizontal id="ListGroup" className="Phonetics d-flex flex-row">
@@ -44,8 +44,8 @@ export default function Results(props) {
                             </section>
                         </div>
                         <div className="col-md-12 col-sm-6">
-                            <div className="col-md-12 col-sm-12 col">
-                                <section className="py-3" id="props.definitions">
+                            <div className="col-md-12 col-sm-12">
+                                <section className="py-3 row-11" id="props.definitions">
                                     <h2>Definition:</h2>
                                     {props.result.meanings.map(function (meaning, index) {
                                         return (

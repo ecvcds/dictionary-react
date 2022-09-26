@@ -52,6 +52,7 @@ export default function Dictionary() {
 
     return (
         <div className="Dictionary">
+         
             <section>
                 <h1>  📖 Dictionary </h1>
                 <form onSubmit={search}>
@@ -62,6 +63,9 @@ export default function Dictionary() {
                 <p>{suggestionMessage}</p>
             </section>
             <Results result = {definition} photos={photos}/>
+
+
+
 
         </div>
     );

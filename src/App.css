@@ -101,8 +101,9 @@ body{
   list-style-type: none;
 }
 
-.col {
-   white-space: nowrap;
-  
+.row-11{
+  min-height: 322.6px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 100%;
 }
-
